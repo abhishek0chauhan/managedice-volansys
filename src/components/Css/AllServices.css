@@ -1,0 +1,53 @@
+.service-container{
+    background-color: #E4EFE7;
+    width: 100%;
+    height: auto;
+    padding-top: 30px;
+}
+
+
+.service-item-container{
+    /* background-color: #E4EFE7;
+    width: 100%;
+    height: auto; */
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 30px;
+}
+
+.service-item-container::-webkit-scrollbar{
+    display: none;
+}
+
+.service-item{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 30px;
+    /* display: inline-block; */
+    
+}
+
+.serviceH1{
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 800;
+    font-weight: Black;
+    color: #064420;
+    text-decoration: #064420 double underline;
+}
+
+.serviceFirstletter{
+    line-height: 23px;
+    padding: 20px;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: black;
+    text-align: center;
+}
+
+a{
+    color: white;
+}
+a:hover{
+    color: white;
+}
