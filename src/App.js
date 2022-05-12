@@ -17,6 +17,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import VendorHome from "./components/vendor/components/VendorHome";
 import LoginVendor from "./components/vendor/components/LoginVendor";
+import HomePageVendor from "./components/vendor/components/HomePageVendor";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path="/AllServices" element={<AllServices />} />
         <Route path="/VendorHome" element={<VendorHome />} />
         <Route path="/LoginVendor" element={<LoginVendor />} />
+        <Route path="/HomePageVendor" element={<HomePageVendor />} />
       </Routes>
       <Footer />
     </>

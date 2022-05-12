@@ -63,8 +63,8 @@ router.post(
   }
 );
 
-//SignUp for Vendor user
-//1: Create a Vendor User using: POST "/api/auth/register/vendor"
+// SignUp for Vendor user
+//1: Create a User using: POST "/api/auth/createuser"
 router.post(
   "/register/vendor",
   [
@@ -161,7 +161,9 @@ router.post(
       };
       const token = jwt.sign(data, JWT_SECRET);
       success = true;
-      res.json({ success, token });
+      //added to specify the admin is true or not for vendor access
+      const admin = user.isAdmin;
+      res.json({ success, token, admin });
     } catch (error) {
       console.error(error.message);
       res.status(500).send("Internal Server Error");

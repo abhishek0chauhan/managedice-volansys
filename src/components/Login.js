@@ -9,7 +9,6 @@ const Login = () => {
 
   const handleSignin = async (e) => {
     e.preventDefault();
-    // let navigate = useNavigate();
     // console.warn(username, email, password);
     let items = { email, password };
     console.log(items);
@@ -24,7 +23,8 @@ const Login = () => {
     });
     result = await result.json();
     // console.log(result);
-    if (result.success) {
+
+    if (result.success && !result.admin) {
       //redirect to home page ans save token in localstorage
       localStorage.setItem("token", result.token);
       //to redirect use useNavigate Hook from react-router-dom

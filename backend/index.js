@@ -16,6 +16,7 @@ app.use(express.json());
 
 //Routes
 app.use("/api/auth", require("./routes/auth"));
+app.use("/vendor", require("./routes/vendor"));
 
 //listen port
 app.listen(port, () => {

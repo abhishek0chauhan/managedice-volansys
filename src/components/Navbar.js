@@ -2,19 +2,32 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
-
 const Navbar = () => {
   let navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("token");
-    navigate("/Login");
+
+    //making redirect to login as per admin is true and false
+    const admin = localStorage.getItem("admin");
+    if (!admin) {
+      navigate("/Login");
+    } else if (admin) {
+      localStorage.removeItem("admin");
+      navigate("/LoginVendor");
+    } else {
+      navigate("/");
+    }
   };
 
-  
+  const handleReload = () => {
+    localStorage.removeItem("vendor");
+    window.localStorage.reload();
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-dark">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
+        <Link onClick={() => handleReload()} className="navbar-brand" to="/">
           ManageDice
         </Link>
         <button
@@ -31,12 +44,29 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0" id="navbar-elements">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">
+              {localStorage.getItem("vendor") ? (
+                <Link
+                  className="nav-link active"
+                  aria-current="page"
+                  to="/HomePageVendor"
+                >
+                  Home
+                </Link>
+              ) : (
+                <Link className="nav-link active" aria-current="page" to="/">
+                  Home
+                </Link>
+              )}
+              {/* <Link className="nav-link active" aria-current="page" to="/">
                 Home
-              </Link>
+              </Link> */}
             </li>
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/AllServices">
+              <Link
+                className="nav-link active"
+                aria-current="page"
+                to="/AllServices"
+              >
                 Services
               </Link>
             </li>
@@ -67,12 +97,47 @@ const Navbar = () => {
           </ul>
           {!localStorage.getItem("token") ? (
             <div>
-              <Link className="btn btn-primary mx-1" to="/SignUp" role="button">
+              {localStorage.getItem("vendor") ? (
+                <>
+                  <Link
+                    className="btn btn-primary mx-1"
+                    to="/SignupVendor"
+                    role="button"
+                  >
+                    SignUp
+                  </Link>
+                  <Link
+                    className="btn btn-primary mx-1"
+                    to="/LoginVendor"
+                    role="button"
+                  >
+                    SignIn
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <Link
+                    className="btn btn-primary mx-1"
+                    to="/SignUp"
+                    role="button"
+                  >
+                    SignUp
+                  </Link>
+                  <Link
+                    className="btn btn-primary mx-1"
+                    to="/Login"
+                    role="button"
+                  >
+                    SignIn
+                  </Link>
+                </>
+              )}
+              {/* <Link className="btn btn-primary mx-1" to="/SignUp" role="button">
                 SignUp
               </Link>
               <Link className="btn btn-primary mx-1" to="/Login" role="button">
                 SignIn
-              </Link>
+              </Link> */}
             </div>
           ) : (
             <button onClick={handleLogout} className="btn btn-success">

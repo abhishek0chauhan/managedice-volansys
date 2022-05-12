@@ -12,7 +12,7 @@ function LoginVendor() {
     // let navigate = useNavigate();
     // console.warn(username, email, password);
     let items = { email, password };
-    console.log(items);
+    // console.log(items);
 
     let result = await fetch("http://localhost:5000/api/auth/login", {
       method: "POST",
@@ -24,9 +24,12 @@ function LoginVendor() {
     });
     result = await result.json();
     // console.log(result);
-    if (result.success) {
+
+    //trying to redirect Vendor user not to show user home page
+    if (result.success && result.admin) {
       //redirect to home page ans save token in localstorage
       localStorage.setItem("token", result.token);
+      localStorage.setItem("admin", result.admin);
       //to redirect use useNavigate Hook from react-router-dom
       navigate("/VendorHome");
     } else {

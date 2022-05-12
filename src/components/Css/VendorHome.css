@@ -1,0 +1,100 @@
+.backgroundImg1 {
+    background-image: url('../../images/event-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+/* #e4efe7 */
+
+.btn-vendor{
+    margin-top: 50px;
+    margin-bottom: 90px;
+    background-color: #e4efe7;
+    width: 200px;
+}
+
+.btn-vendor:hover{
+    background-color: #064420;
+    color: white;
+}
+
+.flex-item-11{
+    font-size: 7vw;
+    color: white;
+    text-align: center;
+}
+.flex-item-21{
+    font-size: 3vw;
+    color: white;
+    text-align: center;
+}
+.flex-item-31{
+    font-size: 3vw;
+    color: white;
+    text-align: center;
+}
+
+hr{
+    border: 0;
+    height: 1px;
+    background: #064420;
+    background-image: linear-gradient(to right, #ccc, #064420, #ccc);
+}
+
+
+/* .scrollIcon {
+	width: 50px;
+	height: 90px;
+	border: 3px solid #064420;
+	border-radius: 60px;
+	position: relative;
+    cursor: pointer;
+    bottom: -50px;
+} */
+
+/* .scrollIcon::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #064420;
+    border-radius: 50%;
+    opacity: 1;
+    animation: wheel 2s infinite;
+} */
+
+@keyframes wheel {
+	to {
+		opacity: 0;
+		top: 60px;
+	}
+}
+
+@media screen and (max-width: 960px) {
+    .flex-item-11{
+        font-size: 15vw;
+        color: #064420;
+        text-align: center;
+    }
+    .flex-item-21{
+        font-size: 7vw;
+        color: #064420;
+        text-align: center;
+    }
+    .flex-item-31{
+        text-align: center;
+        font-size: 7vw;
+        color: #064420;
+    }
+
+
+}

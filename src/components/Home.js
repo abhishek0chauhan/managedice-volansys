@@ -4,16 +4,17 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
 
-
 const Home = () => {
+  localStorage.removeItem("vendor");
+  // window.location.reload();
 
-  
   const onScrollMainPage = () => {
     window.scrollTo(0, 750);
-  }
+  };
 
   useEffect(() => {
     Aos.init({ duration: 1000 });
+    // window.location.reload(1);
   }, []);
 
   return (
