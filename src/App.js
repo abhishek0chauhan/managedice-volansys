@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
-// import SignupVendor from "./components/vendor/components/SignupVendor";
+import SignupVendor from "./components/vendor/components/SignupVendor";
 // import EditUserProfile from "./components/EditUserProfile";
 import AllServices from "./components/AllServices";
 import Homepage from "./components/Homepage";
@@ -15,6 +15,8 @@ import Profile from "./components/Profile";
 import EditProfile from "./components/EditProfile";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import VendorHome from "./components/vendor/components/VendorHome";
+import LoginVendor from "./components/vendor/components/LoginVendor";
 
 function App() {
   return (
@@ -29,10 +31,12 @@ function App() {
         <Route path="/Contact" element={<Contact />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Login" element={<Login />} />
-        {/* <Route path="/SignupVendor" element={<SignupVendor />} /> */}
+        <Route path="/SignupVendor" element={<SignupVendor />} />
         {/* <Route path="/Userprofile" element={<Userprofile />} /> */}
         {/* <Route path="/EditUserProfile" element={<EditUserProfile />}/> */}
         <Route path="/AllServices" element={<AllServices />} />
+        <Route path="/VendorHome" element={<VendorHome />} />
+        <Route path="/LoginVendor" element={<LoginVendor />} />
       </Routes>
       <Footer />
     </>

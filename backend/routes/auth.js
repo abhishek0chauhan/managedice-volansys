@@ -64,61 +64,61 @@ router.post(
 );
 
 //SignUp for Vendor user
-//1: Create a User using: POST "/api/auth/createuser"
-// router.post(
-//   "/register/vendor",
-//   [
-//     body("first_name", "Enter a valid name").isLength({ min: 3 }),
-//     body("last_name", "Enter a valid name").isLength({ min: 3 }),
-//     body("email", "Enter a valid email").isEmail(),
-//     body("password", "Password must be at least 5 characters").isLength({
-//       min: 5,
-//     }),
-//   ],
-//   async (req, res) => {
-//     let success = false;
-//     // If there are errors, return Bad request and the errors
-//     const errors = validationResult(req);
-//     if (!errors.isEmpty()) {
-//       return res.status(400).json({ errors: errors.array() });
-//     }
-//     try {
-//       // Check whether the user with this email exists already
-//       let user = await User.findOne({ email: req.body.email });
-//       if (user) {
-//         return res
-//           .status(400)
-//           .json({ error: "A user with this email already exists" });
-//       }
-//       const salt = await bcrypt.genSalt(10);
-//       const secPass = await bcrypt.hash(req.body.password, salt);
+//1: Create a Vendor User using: POST "/api/auth/register/vendor"
+router.post(
+  "/register/vendor",
+  [
+    body("first_name", "Enter a valid name").isLength({ min: 3 }),
+    body("last_name", "Enter a valid name").isLength({ min: 3 }),
+    body("email", "Enter a valid email").isEmail(),
+    body("password", "Password must be at least 5 characters").isLength({
+      min: 5,
+    }),
+  ],
+  async (req, res) => {
+    let success = false;
+    // If there are errors, return Bad request and the errors
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+    try {
+      // Check whether the user with this email exists already
+      let user = await User.findOne({ email: req.body.email });
+      if (user) {
+        return res
+          .status(400)
+          .json({ error: "A user with this email already exists" });
+      }
+      const salt = await bcrypt.genSalt(10);
+      const secPass = await bcrypt.hash(req.body.password, salt);
 
-//       // Create a new user
-//       user = await User.create({
-//         first_name: req.body.first_name,
-//         last_name: req.body.last_name,
-//         password: secPass,
-//         email: req.body.email,
-//         isAdmin: true,
-//       });
-//       const data = {
-//         user: {
-//           id: user.id,
-//           isAdmin: user.isAdmin,
-//         },
-//       };
-//       const token = jwt.sign(data, JWT_SECRET);
+      // Create a new user
+      user = await User.create({
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
+        password: secPass,
+        email: req.body.email,
+        isAdmin: true,
+      });
+      const data = {
+        user: {
+          id: user.id,
+          isAdmin: user.isAdmin,
+        },
+      };
+      const token = jwt.sign(data, JWT_SECRET);
 
-//       // res.json(user)
-//       success = true;
-//       res.json({ success, token });
-//     } catch (error) {
-//       success = false;
-//       console.error(error.message);
-//       res.status(500).send("Internal Server Error");
-//     }
-//   }
-// );
+      // res.json(user)
+      success = true;
+      res.json({ success, token });
+    } catch (error) {
+      success = false;
+      console.error(error.message);
+      res.status(500).send("Internal Server Error");
+    }
+  }
+);
 
 //2: Authenticate a User using: POST "/api/auth/login"
 router.post(

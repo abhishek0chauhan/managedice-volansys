@@ -1,16 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
 const Login = () => {
+  let navigate = useNavigate();
   // const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
- 
 
   const handleSignin = async (e) => {
     e.preventDefault();
-    let navigate = useNavigate();
+    // let navigate = useNavigate();
     // console.warn(username, email, password);
     let items = { email, password };
     console.log(items);
@@ -52,10 +51,7 @@ const Login = () => {
                       <div className="d-flex flex-row align-items-center mb-4">
                         <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
                         <div className="form-outline flex-fill mb-0">
-                        <label
-                            className="form-label"
-                            htmlFor="email"
-                          >
+                          <label className="form-label" htmlFor="email">
                             Your Email
                           </label>
                           <input
@@ -68,17 +64,13 @@ const Login = () => {
                             placeholder="email"
                             className="form-control"
                           />
-                         
                         </div>
                       </div>
 
                       <div className="d-flex flex-row align-items-center mb-4">
                         <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
                         <div className="form-outline flex-fill mb-0">
-                        <label
-                            className="form-label"
-                            htmlFor="password"
-                          >
+                          <label className="form-label" htmlFor="password">
                             Password
                           </label>
                           <input
@@ -91,11 +83,13 @@ const Login = () => {
                             placeholder="password"
                             className="form-control"
                           />
-                          
                         </div>
                       </div>
 
-                      <div data-testid='form' className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <div
+                        data-testid="form"
+                        className="d-flex justify-content-center mx-4 mb-3 mb-lg-4"
+                      >
                         <button
                           onClick={handleSignin}
                           type="button"
