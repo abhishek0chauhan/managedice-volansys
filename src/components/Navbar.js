@@ -94,6 +94,15 @@ const Navbar = () => {
             ) : (
               <></>
             )}
+            {localStorage.getItem("admin") ? (
+              <li className="nav-item">
+                <Link className="nav-link" to="/ServiceVendorForm">
+                  Add Service
+                </Link>
+              </li>
+            ) : (
+              <></>
+            )}
           </ul>
           {!localStorage.getItem("token") ? (
             <div>

@@ -31,7 +31,7 @@ function LoginVendor() {
       localStorage.setItem("token", result.token);
       localStorage.setItem("admin", result.admin);
       //to redirect use useNavigate Hook from react-router-dom
-      navigate("/VendorHome");
+      navigate("/HomePageVendor");
     } else {
       alert("Invalid credential");
     }

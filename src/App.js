@@ -18,6 +18,7 @@ import Footer from "./components/Footer";
 import VendorHome from "./components/vendor/components/VendorHome";
 import LoginVendor from "./components/vendor/components/LoginVendor";
 import HomePageVendor from "./components/vendor/components/HomePageVendor";
+import ServiceVendorForm from "./components/vendor/components/ServiceVendorForm";
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path="/VendorHome" element={<VendorHome />} />
         <Route path="/LoginVendor" element={<LoginVendor />} />
         <Route path="/HomePageVendor" element={<HomePageVendor />} />
+        <Route path="/ServiceVendorForm" element={<ServiceVendorForm />} />
       </Routes>
       <Footer />
     </>
