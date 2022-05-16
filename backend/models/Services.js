@@ -14,11 +14,17 @@ const ServiceSchema = new Schema(
     vendor_id: {
       type: String,
       default: null,
+    },
+    service_category: {
+      type: String,
+      default: null,
       unique: true,
     },
     service_image: {
-      data: Buffer,
-      contentType: String,
+      type: String,
+      required: true,
+      // data: Buffer,
+      // contentType: String,
     },
   },
   { timestamps: true }

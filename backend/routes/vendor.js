@@ -1,6 +1,14 @@
 const express = require("express");
 const multer = require("multer");
-const upload = multer({ dest: "uploads/" });
+const storage = multer.diskStorage({
+  destination: function(req, file, cb) {
+    cb(null, "./uploads/");
+  },
+  filename: function(req, file, cb) {
+    cb(null, new Date().toISOString() + file.originalname);
+  },
+});
+const upload = multer({ storage: storage });
 const Service = require("../models/Services");
 const router = express.Router();
 // const { body, validationResult } = require("express-validator");
@@ -9,8 +17,9 @@ const fetchuser = require("../middleware/fetchUser");
 router.post(
   "/addservice",
   fetchuser,
-  upload.single("image"),
+  upload.single("service_image"),
   async (req, res) => {
+    console.log(req.file);
     let success = false;
 
     try {
@@ -18,7 +27,8 @@ router.post(
       let service = await Service.create({
         service_name: req.body.service_name,
         service_price: req.body.service_price,
-        service_image: req.body.service_image,
+        service_image: req.file.path,
+        service_category: req.body.service_category,
         vendor_id: req.body.vendor_id,
       });
       console.log(service);

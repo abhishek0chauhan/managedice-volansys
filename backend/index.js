@@ -17,6 +17,7 @@ app.use(express.json());
 //Routes
 app.use("/api/auth", require("./routes/auth"));
 app.use("/vendor", require("./routes/vendor"));
+app.use("/uploads", express.static("uploads"));
 
 //listen port
 app.listen(port, () => {
