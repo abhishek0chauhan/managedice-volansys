@@ -19,6 +19,10 @@ import VendorHome from "./components/vendor/components/VendorHome";
 import LoginVendor from "./components/vendor/components/LoginVendor";
 import HomePageVendor from "./components/vendor/components/HomePageVendor";
 import ServiceVendorForm from "./components/vendor/components/ServiceVendorForm";
+import Birthday from "./components/Birthday";
+import IndividualServiceCard from "./components/IndividualServiceCard";
+import PackageComponent from "./components/PackageComponent";
+import SubServiceMainCard from "./components/SubServiceMainCard";
 
 function App() {
   return (
@@ -41,6 +45,13 @@ function App() {
         <Route path="/LoginVendor" element={<LoginVendor />} />
         <Route path="/HomePageVendor" element={<HomePageVendor />} />
         <Route path="/ServiceVendorForm" element={<ServiceVendorForm />} />
+        <Route path="/Birthday" element={<Birthday />} />
+        <Route
+          path="/IndividualServiceCard"
+          element={<IndividualServiceCard />}
+        />
+        <Route path="/PackageComponent" element={<PackageComponent />} />
+        <Route path="/SubServiceMainCard" element={<SubServiceMainCard />} />
       </Routes>
       <Footer />
     </>
