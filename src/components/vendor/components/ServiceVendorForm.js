@@ -88,7 +88,7 @@ function ServiceVendorForm() {
     formdata.append("vendor_id", vendor_id);
 
     axios
-      .post("http://localhost:5000/vendor/addservice", formdata, {
+      .post("http://localhost:5000/addservice", formdata, {
         headers: {
           "Content-Type": "multipart/form-data",
           Accept: "application/json",

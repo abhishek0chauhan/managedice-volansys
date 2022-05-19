@@ -1,30 +1,62 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
+// const ServiceSchema = new Schema(
+//   {
+//     service_name: {
+//       type: String,
+//       required: true,
+//     },
+//     service_price: {
+//       type: String,
+//       required: true,
+//     },
+//     vendor_id: {
+//       type: String,
+//       default: null,
+//     },
+//     service_category: {
+//       type: String,
+//       default: null,
+//     },
+//     service_image: {
+//       type: String,
+//       // data: Buffer,
+//       default: "",
+//       // contentType: String,
+//     },
+//   },
+//   { timestamps: true }
+// );
+
 const ServiceSchema = new Schema(
   {
-    service_name: {
-      type: String,
-      required: true,
-    },
-    service_price: {
-      type: String,
-      required: true,
-    },
     vendor_id: {
       type: String,
       default: null,
     },
-    service_category: {
-      type: String,
-      default: null,
-    },
-    service_image: {
-      type: String,
-      // data: Buffer,
-      default: "",
-      // contentType: String,
-    },
+    servicee: [
+      {
+        service_name: {
+          type: String,
+          required: true,
+        },
+        service_price: {
+          type: String,
+          required: true,
+        },
+        service_category: {
+          type: String,
+          default: null,
+        },
+        service_image: {
+          type: String,
+          // data: Buffer,
+          default: "",
+          // contentType: String,
+        },
+      },
+    ],
   },
   { timestamps: true }
 );
