@@ -50,12 +50,12 @@ function IndividualServiceCard(props) {
               </div>
               <div class="item-price">
                 <p>&#8377; {props.cost}</p>
-                <div class="rating">
+                {/* <div class="rating">
                   <div></div>
                   <div></div>
                   <div></div>
                   <div></div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

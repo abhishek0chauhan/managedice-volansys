@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Css/Birthday.css";
 // import SubServiceMainCard from "../SubServiceMainCard/SubServiceMainCard";
 import SubServiceMainCard from "./SubServiceMainCard";
@@ -48,6 +49,7 @@ function Birthday() {
       .then((data) => {
         // setUser(data);
         console.log(data);
+        // console.log(data[3].servicee[0].service_price);
         setPrice(data[0].servicee[0].service_price);
       });
   }, []);
@@ -124,11 +126,13 @@ function Birthday() {
 
             <div class="row">
               <div class="col-sm" style={{ cursor: "pointer" }}>
-                <IndividualServiceCard
-                  subServiceImage={cake}
-                  subServiceName="Cake"
-                  cost={price}
-                />
+                <Link to="/cakepage">
+                  <IndividualServiceCard
+                    subServiceImage={cake}
+                    subServiceName="Cake"
+                    cost={price}
+                  />
+                </Link>
               </div>
               <div class="col-sm" style={{ cursor: "pointer" }}>
                 <IndividualServiceCard
@@ -181,6 +185,7 @@ function Birthday() {
               <div class="card-body">
                 <p class="card-text">Order Summary</p>
                 <hr />
+                <h4></h4>
                 <h1>Total ₹{Total}</h1>
                 <hr />
               </div>

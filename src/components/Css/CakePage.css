@@ -2,6 +2,19 @@ label {
     width: 100%;
     font-size: 1rem;
   }
+
+  .containerr{
+      width: 900px;
+      /* align-items: center; */
+      /* display: flex; */
+      align-items: center;
+  }
+
+  .orderSummaryCardd{ 
+      align-items: center;
+      margin-left: 200px;
+      margin-right: 50px;
+   }
   
   .card-input-element+.card {
     height: calc(36px + 2*1rem);
@@ -107,6 +120,7 @@ label {
 
 .item {
   height: 30%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;

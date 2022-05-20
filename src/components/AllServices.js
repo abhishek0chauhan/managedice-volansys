@@ -24,9 +24,7 @@ function AllServices() {
               <h1 className="serviceH1">Services</h1>
             </div>
             <div>
-              <h2 className="serviceFirstletter">
-                Event services we offer
-              </h2>
+              <h2 className="serviceFirstletter">Event services we offer</h2>
             </div>
           </div>
         </div>
@@ -34,7 +32,7 @@ function AllServices() {
 
       <div class="service-item-container">
         <div class="service-item">
-          <Link to="/services/birthday">
+          <Link to="/Birthday">
             <Service
               serviceName="Birthday"
               status="New"
@@ -44,14 +42,12 @@ function AllServices() {
           </Link>
         </div>
         <div class="service-item">
-
-            <Service
-              serviceName="Venue Booking"
-              status="Coming Soon"
-              styless="danger"
-              serviceImg={venueBooking}
-            />
-          
+          <Service
+            serviceName="Venue Booking"
+            status="Coming Soon"
+            styless="danger"
+            serviceImg={venueBooking}
+          />
         </div>
         <div class="service-item">
           <Service
