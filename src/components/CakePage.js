@@ -7,6 +7,8 @@ import IndividualServiceCard from "./IndividualServiceCard";
 // import DatePicker from "react-datepicker";
 // import subDays from "date-fns/subDays";
 import "react-datepicker/dist/react-datepicker.css";
+import { useDispatch } from "react-redux";
+import { add } from "../features/cart/cartSlice";
 // import cake from "../images/birthday/cake.jpg";
 // import catering from "../images/birthday/catering.jpg";
 // import decoration from "../images/birthday/decoration.jpg";
@@ -22,6 +24,13 @@ function CakePage() {
   //   const [Total, setTotal] = useState(0);
   const [service, setService] = useState("");
   const [price, setPrice] = useState("");
+
+  const dispach = useDispatch([]);
+
+  const handleAdd = (service) => {
+    dispach(add(service));
+  };
+
   //   const [startDate, setStartDate] = useState(null);
   //   const [basicPackage] = useState(["Cake", "Decoration"]);
   //   const [standardPackage] = useState(["Cake", "Decoration", "Food"]);
@@ -134,7 +143,11 @@ function CakePage() {
                     subServiceImage={item.servicee[0].service_image}
                     subServiceName={item.servicee[0].service_name}
                     cost={item.servicee[0].service_price}
+                    clickButton={() => handleAdd(item)}
                   />
+                  {/* <button onClick={() => handleAdd(service)}>
+                    add to cart
+                  </button> */}
                 </div>
               </div>
             ))}

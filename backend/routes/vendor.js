@@ -80,7 +80,7 @@ router.get("/vendorservices", fetchuser, async (req, res) => {
 });
 
 //get all service of vendors
-router.get("/vendorservice/all", fetchuser, async (req, res) => {
+router.get("/vendorservice/all", async (req, res) => {
   try {
     // const userId = req.user.id;
 

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import "./Css/Navbar.css";
 
 const Navbar = () => {
   let navigate = useNavigate();
@@ -86,11 +87,16 @@ const Navbar = () => {
               </Link>
             </li> */}
             {localStorage.getItem("token") ? (
-              <li className="nav-item">
-                <Link className="nav-link" to="/Profile">
-                  Profile
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/Profile">
+                    Profile
+                  </Link>
+                </li>
+                <Link className="nav-link nav-cart" to="#">
+                  cart <span>0</span>
                 </Link>
-              </li>
+              </>
             ) : (
               <></>
             )}

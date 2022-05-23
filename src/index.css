@@ -1,74 +1,78 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-.vh-100{
-  background-color: #E4EFE7 !important;
+.vh-100 {
+  background-color: #e4efe7 !important;
 }
-.card{
+.card {
   color: #2d754b !important;
 }
-.btn{
-  background-color: #2d754b ;
+.btn {
+  background-color: #2d754b;
   border-color: #2d754b;
 }
 
-.navbar-brand{
+.navbar-brand {
   color: white !important;
 }
 
-nav .navbar-nav li a{
+nav .navbar-nav li a {
   color: white !important;
-  }
-
-  .btn-outline-primary {
-    color: white;
-  }
-
-  .edit-form{
-    background-color: rgb(228, 239, 231) !important;
-    width: 100%;
-    align-items: center !important;
-    margin: 0px;
-    padding:18px;
-  }
-
-  .dashboard-container{
-    background-color: #E4EFE7;
-    width: 100%;
-    height: 200px;
-    padding: 30px;
-    justify-content: center;
-    align-items: center;
 }
 
-#user-welcome-edit{
-   background-color: #E4EFE7;
-   color: #2d754b;
-    width: 100%;
-    height: 50px;
-    padding: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom:0px;
+.btn-outline-primary {
+  color: white;
 }
 
-#hr-edit{
+.edit-form {
+  background-color: rgb(228, 239, 231) !important;
+  width: 100%;
+  align-items: center !important;
+  margin: 0px;
+  padding: 18px;
+}
+
+.dashboard-container {
+  background-color: #e4efe7;
+  width: 100%;
+  height: 200px;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+#user-welcome-edit {
+  background-color: #e4efe7;
+  color: #2d754b;
+  width: 100%;
+  height: 50px;
+  padding: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0px;
+}
+
+#hr-edit {
   margin: 0px;
   padding: 0.5px;
 }
 
-.container{
+.container {
   margin-top: 0;
 }
+
+/* .nav-cart {
+  padding-left: 500px !important ;
+} */

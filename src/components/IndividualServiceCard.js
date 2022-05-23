@@ -57,6 +57,7 @@ function IndividualServiceCard(props) {
                   <div></div>
                 </div> */}
               </div>
+              <button onClick={props.clickButton}>add to cart</button>
             </div>
           </div>
 

@@ -18,7 +18,7 @@ import venue from "../images/birthday/venue.jpg";
 // import {Link } from "react-router-dom"
 
 function Birthday() {
-  const [price, setPrice] = useState("");
+  const [price, setPrice] = useState("500");
   const [Total, setTotal] = useState(0);
   const [startDate, setStartDate] = useState(null);
   const [basicPackage] = useState(["Cake", "Decoration"]);
@@ -50,7 +50,7 @@ function Birthday() {
         // setUser(data);
         console.log(data);
         // console.log(data[3].servicee[0].service_price);
-        setPrice(data[0].servicee[0].service_price);
+        // setPrice(data[0].servicee[0].service_price);
       });
   }, []);
   //   console.log(user[0].servicee[0]);

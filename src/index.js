@@ -6,6 +6,9 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
 import { BrowserRouter } from "react-router-dom";
+import { store } from "./store";
+import { Provider } from "react-redux";
+
 // import { render } from "";
 
 // const rootElement = document.getElementById("root");
@@ -18,7 +21,6 @@ import { BrowserRouter } from "react-router-dom";
 //   </BrowserRouter>,
 //   rootElement
 // );
-
 
 //..................ne wreact render dom
 // const container = document.getElementById('app');
@@ -33,11 +35,13 @@ import { BrowserRouter } from "react-router-dom";
 // );
 
 ReactDOM.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </BrowserRouter>,
+  <Provider store={store}>
+    <BrowserRouter>
+      <React.StrictMode>
+        <App />
+      </React.StrictMode>
+    </BrowserRouter>
+  </Provider>,
   document.getElementById("root")
 );
 
