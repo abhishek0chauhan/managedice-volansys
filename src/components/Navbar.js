@@ -2,8 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import "./Css/Navbar.css";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  const items = useSelector((state) => state.cart);
   let navigate = useNavigate();
   const handleLogout = () => {
     localStorage.removeItem("token");
@@ -93,8 +95,11 @@ const Navbar = () => {
                     Profile
                   </Link>
                 </li>
-                <Link className="nav-link nav-cart" to="#">
-                  cart <span>0</span>
+                <Link className=" nav-cart" to="/cart">
+                  <i class="fa badgee fa-lg" value={items.length}>
+                    &#xf07a;
+                  </i>
+                  {/* cart <span>{items.length}</span> */}
                 </Link>
               </>
             ) : (

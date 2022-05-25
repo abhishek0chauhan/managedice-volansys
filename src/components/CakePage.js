@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Css/CakePage.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 // import SubServiceMainCard from "../SubServiceMainCard/SubServiceMainCard";
 import SubServiceMainCard from "./SubServiceMainCard";
 import IndividualServiceCard from "./IndividualServiceCard";
@@ -20,15 +22,18 @@ import { add } from "../features/cart/cartSlice";
 
 function CakePage() {
   const service_array = [];
+  const notify = () => toast("service added to the cart");
   //   const [price, setPrice] = useState("");
   //   const [Total, setTotal] = useState(0);
   const [service, setService] = useState("");
-  const [price, setPrice] = useState("");
+  // const [price, setPrice] = useState("");
 
   const dispach = useDispatch([]);
 
   const handleAdd = (service) => {
     dispach(add(service));
+    notify();
+    // setPrice(service.servicee[0].service_price)
   };
 
   //   const [startDate, setStartDate] = useState(null);
@@ -66,9 +71,9 @@ function CakePage() {
       });
   }, []);
 
-  const handlePrice = () => {
-    setPrice();
-  };
+  // const handlePrice = () => {
+  //   setPrice();
+  // };
 
   for (let item = 0; item < service.length; item++) {
     const element = service[item];
@@ -151,6 +156,7 @@ function CakePage() {
                 </div>
               </div>
             ))}
+            <ToastContainer />
           </div>
           <br />
         </div>

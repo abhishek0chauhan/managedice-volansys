@@ -73,6 +73,47 @@ nav .navbar-nav li a {
   margin-top: 0;
 }
 
-/* .nav-cart {
-  padding-left: 500px !important ;
+.nav-cart {
+  color: white;
+  text-decoration: none;
+  padding-top: 7.5px;
+  padding-left: 8px;
+}
+
+.cartWrapper {
+  align-items: center;
+}
+
+.cartCard {
+  padding-left: 40px;
+}
+
+.cartImage {
+  width: 30%;
+  height: 235px;
+}
+
+/* .cartCard {
+  align-items: center;
 } */
+
+.cartButton {
+  margin-bottom: 30px;
+}
+
+.cartName {
+  margin-bottom: 50px;
+}
+
+.badgee:after {
+  content: attr(value);
+  font-size: 12px;
+  color: #fff;
+  background: red;
+  border-radius: 50%;
+  padding: 0 5px;
+  position: relative;
+  left: -8px;
+  top: -10px;
+  opacity: 0.9;
+}
