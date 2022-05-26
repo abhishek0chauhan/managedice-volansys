@@ -32,14 +32,25 @@ function AllServices() {
 
       <div class="service-item-container">
         <div class="service-item">
-          <Link to="/Birthday">
-            <Service
-              serviceName="Birthday"
-              status="New"
-              styless="success"
-              serviceImg={BirthdayImg}
-            />
-          </Link>
+          {!localStorage.getItem("admin") ? (
+            <Link to="/Birthday">
+              <Service
+                serviceName="Birthday"
+                status="New"
+                styless="success"
+                serviceImg={BirthdayImg}
+              />
+            </Link>
+          ) : (
+            <Link to="#">
+              <Service
+                serviceName="Birthday"
+                status="New"
+                styless="success"
+                serviceImg={BirthdayImg}
+              />
+            </Link>
+          )}
         </div>
         <div class="service-item">
           <Service

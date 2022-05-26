@@ -149,6 +149,7 @@ function CakePage() {
                     subServiceName={item.servicee[0].service_name}
                     cost={item.servicee[0].service_price}
                     clickButton={() => handleAdd(item)}
+                    Addcart="add to cart"
                   />
                   {/* <button onClick={() => handleAdd(service)}>
                     add to cart

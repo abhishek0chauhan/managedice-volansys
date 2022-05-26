@@ -3,6 +3,7 @@ const Service = require("../models/Services");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
+const { uploadFile } = require("../s3");
 
 const storage = multer.diskStorage({
   destination: path.join(__dirname, "../" + "uploads"),
@@ -25,6 +26,9 @@ router.post(
 
   async (req, res) => {
     const url = req.protocol + "://" + req.get("host");
+    const file = req.file;
+    const result = await uploadFile(file);
+    console.log(result);
     console.log(req.file);
     let success = false;
     try {

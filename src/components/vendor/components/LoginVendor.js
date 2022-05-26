@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function LoginVendor() {
   let navigate = useNavigate();
+  const notify = () => toast("Please SignIn with correct Credentials");
   // const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -33,7 +36,8 @@ function LoginVendor() {
       //to redirect use useNavigate Hook from react-router-dom
       navigate("/HomePageVendor");
     } else {
-      alert("Invalid credential");
+      // alert("Invalid credential");
+      notify();
     }
   };
   return (
@@ -48,6 +52,7 @@ function LoginVendor() {
                     <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
                       Sign in
                     </p>
+                    <ToastContainer />
 
                     <form className="mx-1 mx-md-4">
                       <div className="d-flex flex-row align-items-center mb-4">

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   let navigate = useNavigate();
@@ -9,6 +11,7 @@ const Login = () => {
 
   const handleSignin = async (e) => {
     e.preventDefault();
+    const notify = () => toast("Please SignIn with correct Credentials");
     // console.warn(username, email, password);
     let items = { email, password };
     console.log(items);
@@ -30,7 +33,8 @@ const Login = () => {
       //to redirect use useNavigate Hook from react-router-dom
       navigate("/");
     } else {
-      alert("Invalid credential");
+      // alert("Invalid credential");
+      notify();
     }
   };
 
@@ -98,6 +102,7 @@ const Login = () => {
                         >
                           SignIn
                         </button>
+                        <ToastContainer />
                       </div>
                     </form>
                   </div>

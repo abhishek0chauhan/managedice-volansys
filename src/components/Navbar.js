@@ -95,12 +95,16 @@ const Navbar = () => {
                     Profile
                   </Link>
                 </li>
-                <Link className=" nav-cart" to="/cart">
-                  <i class="fa badgee fa-lg" value={items.length}>
-                    &#xf07a;
-                  </i>
-                  {/* cart <span>{items.length}</span> */}
-                </Link>
+                {!localStorage.getItem("admin") ? (
+                  <Link className=" nav-cart" to="/cart">
+                    <i class="fa badgee fa-lg" value={items.length}>
+                      &#xf07a;
+                    </i>
+                    {/* cart <span>{items.length}</span> */}
+                  </Link>
+                ) : (
+                  <></>
+                )}
               </>
             ) : (
               <></>
