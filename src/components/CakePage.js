@@ -11,6 +11,7 @@ import IndividualServiceCard from "./IndividualServiceCard";
 import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch } from "react-redux";
 import { add } from "../features/cart/cartSlice";
+import axios from "axios";
 // import cake from "../images/birthday/cake.jpg";
 // import catering from "../images/birthday/catering.jpg";
 // import decoration from "../images/birthday/decoration.jpg";
@@ -33,6 +34,7 @@ function CakePage() {
   const handleAdd = (service) => {
     dispach(add(service));
     notify();
+
     // setPrice(service.servicee[0].service_price)
   };
 
@@ -83,7 +85,7 @@ function CakePage() {
     // console.log(name_service);
     // name_service = toLowerCase(name_service);
     // console.log(element);
-    if (name_service == "cake" || name_service == "Cake") {
+    if (name_service === "cake" || name_service === "Cake") {
       //   localStorage.setItem("service_name", "cake");
       console.log(element.servicee[0].service_name);
       service_array.push(element);

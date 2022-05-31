@@ -25,6 +25,7 @@ import PackageComponent from "./components/PackageComponent";
 import SubServiceMainCard from "./components/SubServiceMainCard";
 import CakePage from "./components/CakePage";
 import Cart from "./components/Cart";
+import UserOrder from "./components/UserOrder";
 
 function App() {
   return (
@@ -56,6 +57,7 @@ function App() {
         <Route path="/SubServiceMainCard" element={<SubServiceMainCard />} />
         <Route path="/cakepage" element={<CakePage />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/userorder" element={<UserOrder />} />
       </Routes>
       <Footer />
     </>

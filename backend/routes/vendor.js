@@ -19,6 +19,8 @@ const router = express.Router();
 // const { body, validationResult } = require("express-validator");
 const fetchuser = require("../middleware/fetchUser");
 
+// https://vendor-service-image.s3.amazonaws.com/logo512.png
+
 router.post(
   "/addservice",
   fetchuser,
@@ -37,7 +39,7 @@ router.post(
         servicee: {
           service_name: req.body.service_name,
           service_price: req.body.service_price,
-          service_image: `http://localhost:5000/uploads/${req.file.filename}`,
+          service_image: `https://vendor-service-image.s3.amazonaws.com/${req.file.filename}`,
           service_category: req.body.service_category,
         },
         // service_name: req.body.service_name,

@@ -19,21 +19,21 @@ import venue from "../images/birthday/venue.jpg";
 
 function Birthday() {
   const [price, setPrice] = useState("500");
-  const [Total, setTotal] = useState(0);
-  const [startDate, setStartDate] = useState(null);
+  // const [Total, setTotal] = useState(0);
+  // const [startDate, setStartDate] = useState(null);
   const [basicPackage] = useState(["Cake", "Decoration"]);
   const [standardPackage] = useState(["Cake", "Decoration", "Food"]);
   const [plusPackage] = useState(["Cake", "Decoration", "Food", "DJ"]);
 
-  const calculateTotal = (input, checked) => {
-    let total = Total;
-    if (checked) {
-      total += input;
-    } else {
-      total -= input;
-    }
-    setTotal(total);
-  };
+  // const calculateTotal = (input, checked) => {
+  //   let total = Total;
+  //   if (checked) {
+  //     total += input;
+  //   } else {
+  //     total -= input;
+  //   }
+  //   setTotal(total);
+  // };
 
   useEffect(() => {
     fetch(`http://localhost:5000/vendorservices`, {
@@ -63,7 +63,7 @@ function Birthday() {
       />
       <div class="container">
         <div className="row orderSummaryCard">
-          <div className="col-sm-8">
+          {/* <div className="col-sm-8">
             <label for="city">Choose a City</label>
             <div class="select">
               <select name="city" id="city">
@@ -71,8 +71,8 @@ function Birthday() {
                 <option value="surat">Surat, Gujarat</option>
               </select>
             </div>
-          </div>
-          <div className="col-sm-4">
+          </div> */}
+          {/* <div className="col-sm-4">
             <label for="birthdate">Choose event date</label>
             <DatePicker
               selected={startDate}
@@ -82,7 +82,7 @@ function Birthday() {
               placeholderText="Select a Birthdate"
               className="myDatePicker"
             />
-          </div>
+          </div> */}
         </div>
 
         <div className="row orderSummaryCard">
@@ -180,7 +180,7 @@ function Birthday() {
             </div>
           </div>
           <br />
-          <div className="col-sm-4" style={{ marginTop: "30px" }}>
+          {/* <div className="col-sm-4" style={{ marginTop: "30px" }}>
             <div class="card positionSticky" style={{ width: "auto" }}>
               <div class="card-body">
                 <p class="card-text">Order Summary</p>
@@ -190,7 +190,7 @@ function Birthday() {
                 <hr />
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
         <hr />
         <div className="orDivide">OR</div>

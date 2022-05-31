@@ -30,6 +30,7 @@ const Login = () => {
     if (result.success && !result.admin) {
       //redirect to home page ans save token in localstorage
       localStorage.setItem("token", result.token);
+      localStorage.setItem("email", email);
       //to redirect use useNavigate Hook from react-router-dom
       navigate("/");
     } else {
